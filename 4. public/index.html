@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Webspace</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Login View -->
+    <div id="login-view" class="view active">
+      <div class="login-card">
+        <h1>Webspace</h1>
+        <p class="subtitle">Private HTML Library</p>
+        <input type="password" id="admin-key" placeholder="Admin Key" autocomplete="current-password">
+        <button id="login-btn" class="btn primary">Enter</button>
+        <p id="login-error" class="error"></p>
+      </div>
+    </div>
+
+    <!-- Dashboard View -->
+    <div id="dashboard-view" class="view">
+      <header class="topbar">
+        <h1>Webspace</h1>
+        <button id="logout-btn" class="btn ghost">Logout</button>
+      </header>
+
+      <section class="stats">
+        <div class="stat-card">
+          <span class="stat-value" id="total-count">0</span>
+          <span class="stat-label">Total</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="private-count">0</span>
+          <span class="stat-label">Private</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="public-count">0</span>
+          <span class="stat-label">Published</span>
+        </div>
+      </section>
+
+      <section class="upload-area">
+        <label for="file-input" class="btn primary upload-btn">
+          <span id="upload-text">Upload HTML</span>
+          <span id="upload-progress" class="progress-text"></span>
+        </label>
+        <input type="file" id="file-input" accept=".html,.htm" hidden>
+      </section>
+
+      <section class="toolbar">
+        <input type="search" id="search-input" placeholder="Search pages...">
+        <select id="sort-select">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="alpha">A-Z</option>
+        </select>
+      </section>
+
+      <section class="library">
+        <h2>Private Library</h2>
+        <div id="private-list" class="page-list"></div>
+      </section>
+
+      <section class="gallery">
+        <h2>Public Gallery</h2>
+        <div id="public-list" class="page-list"></div>
+      </section>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
